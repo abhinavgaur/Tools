@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class MyClass
 {
 	static Dictionary<string, string> codeToName = new Dictionary<string, string>();
-	static StreamWriter sw = new StreamWriter(@"D:\Documents\学校\作业\毕业设计\Data\results22_readable.txt", false, Encoding.Unicode);
+	static StreamWriter sw = null;
 	static string codeNameFile = @"D:\Documents\学校\作业\毕业设计\Data\allA_名称.txt",
 		inputFile = @"D:\Documents\学校\作业\毕业设计\Data\results22.txt",
 		dataDirectory = @"D:\Documents\学校\作业\毕业设计\Data\";
@@ -64,8 +64,18 @@ public class MyClass
 	
 	#region Helper methods
 	
-	public static void Main()
+	public static void Main(string[] argv)
 	{
+		if (argv.Length < 3) {
+			Console.WriteLine("Usage: parseResultFile [working dir] [result file] [output]");
+			return;
+		}
+		
+		dataDirectory = argv[0];
+		codeNameFile = argv[0] + @"\allA_名称.txt";
+		inputFile = argv[0] + "\\" + argv[1];		
+		sw = new StreamWriter(argv[0] + "\\" + argv[2], false, Encoding.Unicode);
+		
 		try
 		{
 			RunSnippet();
