@@ -1,0 +1,56 @@
+﻿\item 银行：
+\subitem 000001 深发展A
+\subitem 002142 宁波银行
+\subitem 600000 浦发银行
+\subitem 600015 华夏银行
+\subitem 600016 民生银行
+\subitem 600036 招商银行
+\subitem 601009 南京银行
+\subitem 601166 兴业银行
+\subitem 601169 北京银行
+\subitem 601288 农业银行
+\item 钢铁：
+\subitem 000629 攀钢钒钛
+\subitem 000709 河北钢铁
+\subitem 000717 韶钢松山
+\subitem 000898 鞍钢股份
+\subitem 600022 济南钢铁
+\subitem 600282 南钢股份
+\subitem 600019 宝钢股份
+\subitem 000959 首钢股份
+\subitem 000709 河北钢铁
+\subitem 600569 安阳钢铁
+\item 医药：
+\subitem 601607 上海医药
+\subitem 600511 国药股份
+\subitem 600833 第一医药
+\subitem 600713 南京医药
+\subitem 000028 国药一致
+\subitem 600085 同仁堂
+\subitem 600129 太极集团
+\subitem 600422 昆明制药
+\subitem 000423 东阿阿胶
+\subitem 002589 瑞康医药
+\item 酒：
+\subitem 000568 泸州老窖
+\subitem 000858 五粮液
+\subitem 600519 贵州茅台
+\subitem 600779 水井坊
+\subitem 000596 古井贡酒
+\subitem 600809 山西汾酒
+\subitem 000799 酒鬼酒
+\subitem 002304 洋河股份
+\subitem 600702 沱牌舍得
+\subitem 600559 老白干酒
+\item 软件：
+\subitem 600570 恒生电子
+\subitem 600756 浪潮软件
+\subitem 000948 南天信息
+\subitem 600271 航天信息
+\subitem 002063 远光软件
+\subitem 002065 东华软件
+\subitem 000938 紫光股份
+\subitem 002073 软控股份
+\subitem 002090 金智科技
+\subitem 002230 科大讯飞
+

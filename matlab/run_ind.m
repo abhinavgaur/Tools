@@ -1,0 +1,9 @@
+diary off
+diary '../result_ind.txt'
+diary on
+getindkmeans('S12', 3);
+getindkmeans('S50', 5);
+getindkmeans('R50', 5);
+getindkmeans('S100', 10);
+getindkmeans('S500', 20);
+diary off

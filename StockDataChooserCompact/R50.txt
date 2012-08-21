@@ -1,0 +1,56 @@
+﻿\item 钢铁：
+\subitem 000629 攀钢钒钛
+\subitem 000709 河北钢铁
+\subitem 000717 韶钢松山
+\subitem 000898 鞍钢股份
+\subitem 000932 华菱钢铁
+\subitem 600282 南钢股份
+\subitem 600019 宝钢股份
+\subitem 000959 首钢股份
+\subitem 000709 河北钢铁
+\subitem 600569 安阳钢铁
+\item 煤炭：
+\subitem 000780 平庄能源
+\subitem 000723 美锦能源
+\subitem 002128 露天煤业
+\subitem 600188 兖州煤业
+\subitem 600348 阳泉煤业
+\subitem 600546 山煤国际
+\subitem 600740 山西焦化
+\subitem 601001 大同煤业
+\subitem 601666 平煤股份
+\subitem 601898 中煤能源
+\item 汽车：
+\subitem 000550 江铃汽车
+\subitem 000572 海马汽车
+\subitem 000625 长安汽车
+\subitem 000800 一汽轿车
+\subitem 000868 安凯客车
+\subitem 000927 一汽夏利
+\subitem 000951 中国重汽
+\subitem 000957 中通客车
+\subitem 002594 比亚迪
+\subitem 600006 东风汽车
+\item 航空：
+\subitem 600029 南方航空
+\subitem 600115 东方航空
+\subitem 600221 海南航空
+\subitem 600316 洪都航空
+\subitem 000089 深圳机场
+\subitem 600004 白云机场
+\subitem 600009 上海机场
+\subitem 600151 航天机电
+\subitem 600893 航空动力
+\subitem 000901 航天科技
+\item 电力：
+\subitem 600011 华能国际
+\subitem 600021 上海电力
+\subitem 600027 华电国际
+\subitem 600644 乐山电力
+\subitem 600101 明星电力
+\subitem 600116 三峡水利
+\subitem 600131 岷江水电
+\subitem 600236 桂冠电力
+\subitem 600292 九龙电力
+\subitem 600310 桂东电力
+

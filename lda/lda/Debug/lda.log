@@ -1,0 +1,22 @@
+﻿Build started 2012/7/12 18:30:20.
+     1>Project "D:\Documents\学校\作业\毕业设计\Tools\lda\lda\lda.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\lda.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\lda.unsuccessfulbuild".
+         Touching "Debug\lda.lastbuildstate".
+     1>Done Building Project "D:\Documents\学校\作业\毕业设计\Tools\lda\lda\lda.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.22

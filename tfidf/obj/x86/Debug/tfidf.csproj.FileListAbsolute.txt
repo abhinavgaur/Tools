@@ -1,0 +1,17 @@
+D:\studio\tfidf\bin\Debug\tfidf.exe
+D:\studio\tfidf\bin\Debug\tfidf.pdb
+D:\studio\tfidf\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\studio\tfidf\obj\x86\Debug\tfidf.exe
+D:\studio\tfidf\obj\x86\Debug\tfidf.pdb
+D:\Documents\MATLAB\Tools\tfidf\bin\Debug\tfidf.exe
+D:\Documents\MATLAB\Tools\tfidf\bin\Debug\tfidf.pdb
+D:\Documents\MATLAB\Tools\tfidf\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\MATLAB\Tools\tfidf\obj\x86\Debug\tfidf.exe
+D:\Documents\MATLAB\Tools\tfidf\obj\x86\Debug\tfidf.pdb
+D:\Documents\MATLAB\Tools\bin\tfidf.exe
+D:\Documents\MATLAB\Tools\bin\tfidf.pdb
+D:\Documents\学校\作业\毕业设计\Tools\bin\tfidf.exe
+D:\Documents\学校\作业\毕业设计\Tools\bin\tfidf.pdb
+D:\Documents\学校\作业\毕业设计\Tools\tfidf\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\学校\作业\毕业设计\Tools\tfidf\obj\x86\Debug\tfidf.exe
+D:\Documents\学校\作业\毕业设计\Tools\tfidf\obj\x86\Debug\tfidf.pdb
