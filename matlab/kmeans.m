@@ -17,6 +17,7 @@ function [L,C] = kmeans(X,k)
 
 L = [];
 L1 = 0;
+X=X';
 
 while length(unique(L)) ~= k
     
@@ -35,5 +36,5 @@ while length(unique(L)) ~= k
         for i = 1:k, l = L==i; C(:,i) = sum(X(:,l),2)/sum(l); end
         [tmp,L] = max(bsxfun(@minus,2*real(C'*X),dot(C,C).'),[],1);
     end
-    
+    L=L'; C=C';
 end
