@@ -32,7 +32,7 @@ zthpublic@gmail.com
 ### 调用样例
 > `lda est 0.01 3 settings.txt lda.input random output_dir\`
 
-从文件 lda.input 读入矩阵，并归为3个话题。输出文件在 `output_dir\`。一般而言，使用 `final.gamma` 和 `final.beta` 。其中，`final.beta` 中保存了每个 topic 下词汇的概率分布的对数；`final.gamma` 中保存了每个输入文档中各 topic 的 Dirichlet prior 值，可以将其看作文档中每个
+从文件 lda.input 读入矩阵，并归为3个话题。输出文件在 `output_dir\`。一般而言，使用 `final.gamma` 和 `final.beta` 。其中，`final.beta` 中保存了每个 topic 下词汇的概率分布的对数；`final.gamma` 中保存了每个输入文档中各 topic 的 Dirichlet prior 值，可以将其看作文档中每个 topic 的比重。
 
 ## 矩阵文件格式转换工具
 ### 说明
