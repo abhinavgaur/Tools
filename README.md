@@ -13,7 +13,7 @@ zthpublic@gmail.com
 授权协议：GPL
 
 ### 用法
-详细情况请参看：[http://www.cs.utexas.edu/users/dml/datamining/README_gmeans]()。  
+详细情况请参看：[http://www.cs.utexas.edu/users/dml/datamining/README_gmeans](http://www.cs.utexas.edu/users/dml/datamining/README_gmeans)。  
 
 ### 调用样例
 > `gmeans -F t -c 3 gmeans.input`
@@ -22,12 +22,12 @@ zthpublic@gmail.com
 
 ## LDA 工具
 ### 说明
-来源：[http://www.cs.princeton.edu/~blei/lda-c/]()  
+来源：[http://www.cs.princeton.edu/~blei/lda-c/](http://www.cs.princeton.edu/~blei/lda-c/)  
 可执行文件：lda.exe  
 授权协议：GPL
 
 ### 用法
-详细情况请参看：[http://www.cs.princeton.edu/~blei/lda-c/readme.txt]()
+详细情况请参看：[http://www.cs.princeton.edu/~blei/lda-c/readme.txt](http://www.cs.princeton.edu/~blei/lda-c/readme.txt)
 
 ### 调用样例
 > `lda est 0.01 3 settings.txt lda.input random output_dir\`
