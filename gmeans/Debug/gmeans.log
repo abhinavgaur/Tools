@@ -1,4 +1,4 @@
-﻿Build started 2012/8/21 15:24:05.
+﻿Build started 2012/8/22 10:38:44.
      1>Project "D:\Documents\学校\作业\毕业设计\Tools\gmeans\gmeans.vcxproj" on node 2 (build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>InitializeBuildStatus:
@@ -40,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.27
+Time Elapsed 00:00:01.94
