@@ -1,6 +1,6 @@
 diary off;
-!del ..\results.txt > nul;
-diary '..\results.txt';
+!del ..\..\Data\results.txt > nul;
+diary '..\..\Data\results.txt';
 diary on;
 getkmeans('S12', '07', 3);
 getkmeans('S12', '08', 3);

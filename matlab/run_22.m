@@ -1,0 +1,14 @@
+diary off;
+system('del ..\..\Data\results22.txt > nul');
+diary '..\..\Data\results22.txt';
+diary on;
+get2sp2kmeans('S12', '07', 3);
+get2sp2kmeans('S12', '08', 3);
+get2sp2kmeans('S12', '09', 3);
+get2sp2kmeans('S50', '09', 5);
+get2sp2kmeans('S50', '10', 5);
+get2sp2kmeans('R50', '09', 5);
+get2sp2kmeans('R50', '10', 5);
+get2sp2kmeans('S100', '10', 10);
+get2sp2kmeans('S500', '10', 20);
+diary off;

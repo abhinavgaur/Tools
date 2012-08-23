@@ -11,5 +11,6 @@ n=data(1);
 L=data(2:1+n)+1;
 m=data(2+n);
 data=data(3+n:size(data,1));
-C=reshape(data,size(data,1)/m,m);
+C=reshape(data,size(data,1)/m,m)';
+C=normalize(C')';
 !del ~* > nul

@@ -1,5 +1,5 @@
 diary off
-diary '../result_ind.txt'
+diary '../../data/result_ind.txt'
 diary on
 getindkmeans('S12', 3);
 getindkmeans('S50', 5);
