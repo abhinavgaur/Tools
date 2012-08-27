@@ -8,5 +8,5 @@ lik = 0;
 n = length(d);
 for i = 1:n
   t = d{i};
-  lik = lik + t.cnt * (beta(t.id,:) * egamma(i,:)');
+  lik = lik + t.cnt * (beta(:,t.id)' * egamma(i,:)');
 end

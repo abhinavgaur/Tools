@@ -1,7 +1,3 @@
-function [g A] = get2spkmeans(set, year, n)
-fprintf('getkmeans(''%s'', ''%s'', %d);\n', set, year, n);
-kmeansRunTimes=10;
-
 f1=load(['../../Data/' set '/' set '-' year 'PZ.txt']); f2=load(['../../Data/' set '/' set 'KFQ.txt']);
 f1=normalize(f1')'; f2=normalize(f2')';
 
@@ -20,15 +16,3 @@ A=pinv(beta')*E*pinv(beta2);
 %A=lsqSolveA(beta,beta2,E);
 Ap=normalize(A')';
 %disp(Ap);
-
-for krun = 1 : kmeansRunTimes
-    v = +inf; vv = v; g = []; gg = [];
-    try
-        gg = spkmeans([gamma*Ap+gamma2],n);
-        %gg = spkmeans([l1*Ap+l2],n);
-        vv = scoreresult(gg, n);
-    catch
-    end;
-    if v>vv, g=gg; v=vv; end;
-end;
-disp(g);
