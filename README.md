@@ -5,7 +5,7 @@
 zthpublic@gmail.com  
 [http://github.com/zhuth/Tools/](http://github.com/zhuth/Tools/)
 
-## G-means 工具
+## 多种 K-means 工具
 ### 说明
 来源：[http://www.cs.utexas.edu/users/dml/Software/gmeans.html](http://www.cs.utexas.edu/users/dml/Software/gmeans.html)  
 修改其中代码，使之可以在Windows下通过VC2010编译运行。  
