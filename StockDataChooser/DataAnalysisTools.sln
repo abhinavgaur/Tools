@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topics", "..\lda\topics\top
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsScript", "..\CsScript\CsScript.csproj", "{83034319-9F41-43C8-822E-3F5D9AE27D4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordSegmentation", "..\WordSegmentation\WordSegmentation.csproj", "{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -71,6 +73,16 @@ Global
 		{83034319-9F41-43C8-822E-3F5D9AE27D4C}.Release|Win32.ActiveCfg = Release|x86
 		{83034319-9F41-43C8-822E-3F5D9AE27D4C}.Release|x86.ActiveCfg = Release|x86
 		{83034319-9F41-43C8-822E-3F5D9AE27D4C}.Release|x86.Build.0 = Release|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Debug|Win32.ActiveCfg = Debug|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Debug|x86.ActiveCfg = Debug|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Debug|x86.Build.0 = Debug|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Release|Mixed Platforms.Build.0 = Release|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Release|Win32.ActiveCfg = Release|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Release|x86.ActiveCfg = Release|x86
+		{FB02B7D9-C82B-47E1-BDCD-748A53A62D26}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

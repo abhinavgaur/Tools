@@ -16,6 +16,7 @@ namespace CsScript
             CompilerParameters compilerParameters = new CompilerParameters();
             compilerParameters.GenerateInMemory = generateInMemory;
             compilerParameters.GenerateExecutable = generateExecutable;
+            compilerParameters.IncludeDebugInformation = true;
             compilerParameters.ReferencedAssemblies.Add("System.dll");
             compilerParameters.ReferencedAssemblies.Add("System.Data.dll");
             if (outputAssembly != null)
