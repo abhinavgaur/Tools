@@ -31,14 +31,17 @@ namespace Demo
         {
             Console.WriteLine("PanGu Word Segment");
 
-            string[] input = null; string output = "";
+            string input = "", output = "";
             if (args.Length >= 2)
             {
-                input = System.IO.File.ReadAllLines(args[0]);
+                input = args[0];
                 output = args[1];
             }
             else {
-                Console.WriteLine("Usage: wordsegment <input> <output>");
+                Console.WriteLine("Usage: wordsegment <input> <output> [-pos]");
+                FormDemo demo = new FormDemo();
+                demo.ShowDialog();
+                return;
             }
 
             bool showPosition = args.Length >= 3 && args[2] == "-pos";
@@ -51,7 +54,7 @@ namespace Demo
 
             using (System.IO.StreamWriter sw = new System.IO.StreamWriter(output))
             {
-                foreach (string doc in input)
+                foreach (string doc in System.IO.File.ReadAllLines(input))
                 {
                     Segment segment = new Segment();
                     ICollection<WordInfo> words = segment.DoSegment(doc, options, parameters);
@@ -67,14 +70,7 @@ namespace Demo
                         if (showPosition)
                         {
 
-                            wordsString.AppendFormat("{0}({1},{2})/", wordInfo.Word, wordInfo.Position, wordInfo.Rank);
-                            //if (_Options.MultiDimensionality)
-                            //{
-                            //}
-                            //else
-                            //{
-                            //    wordsString.AppendFormat("{0}({1})/", wordInfo.Word, wordInfo.Position);
-                            //}
+                            wordsString.AppendFormat("{0}/({1},{2}) ", wordInfo.Word, wordInfo.Position, wordInfo.Rank);
                         }
                         else
                         {

@@ -6,10 +6,11 @@ zthpublic@gmail.com
 [http://github.com/zhuth/Tools/](http://github.com/zhuth/Tools/)
 
 ## 多种 K-means 工具
+*注意，这并非是一个Gaussian means的实现。关于Gaussian means（gmeans），请参看 `matlab` 文件夹下的内容。*
 ### 说明
 来源：[http://www.cs.utexas.edu/users/dml/Software/gmeans.html](http://www.cs.utexas.edu/users/dml/Software/gmeans.html)  
 修改其中代码，使之可以在Windows下通过VC2010编译运行。  
-可执行文件：gmeans.exe  
+可执行文件：gmeans.exe  源码文件夹：`multi-kmeans`  
 授权协议：GPL
 
 ### 用法
@@ -56,6 +57,52 @@ zthpublic@gmail.com
 
 > `LDAInputConverter lsa2lda2 freq.txt lda.input  
 > lda est 0.01 3 settings.txt lda.input random output_dir\`
+
+## 盘古分词
+### 说明
+下载地址：[http://pangusegment.codeplex.com/](http://pangusegment.codeplex.com/)  
+授权协议：Apache License  
+可执行文件：`..\WordSegment\Release\WordSegment.exe`
+
+### 用法
+命令行模式：
+> `wordsegment <input> <output> [-pos]`
+
+`<input>` 为输入文件（以Unicode/UTF-8格式编码）， `<output>` 为分好词的输出。  
+加上`-pos`开关则会输出该词相关的内容。
+
+图形界面模式：直接执行程序，在出现的窗口中作设置。该界面是由PanGu的编写者编写的Demo。
+
+该程序依赖 `WordSegment\Dictionaries\` 下的数据文件。
+
+## C#Script
+### 说明
+可执行文件：CsScript.exe  
+该程序可将一个C#代码片断当做一个脚本来运行。  
+授权协议：LGPL
+
+### 用法
+
+> `CsScript <filename> [-c[reate]] [-f[ull]]`
+
+执行 `<filename>` 中的脚本。
+
+- `-c` 开关：加上 `-c` 则创建（或覆盖）一个新的脚本文件。
+- `-f` 开关：加上 `-f` 表示文件是一个完整的 C# 程序。这时调用类似于在 Visual Studio 2010 Command Line 环境下运行 `csc <filename>`。
+
+### 关于脚本的说明
+
+默认添加了对 `System.dll` 的引用，并使用了 `System.IO`, `System.Text`, `System.Text.RegularExpressions` 这三个命名空间。要添加新的引用，请在脚本中（任意位置）添加：
+
+> `\#reference <DLL 文件路径>`
+
+要添加新的 `using`，请在脚本中编写：
+> `\#using <namespace>;`
+
+要在脚本中编写函数，请在正常的函数声明前添加一行：
+> `\#function`
+
+然后紧跟着函数声明。*请注意，函数应当声明为 `static`。*
 
 ## 股票数据选择工具
 ### 说明
@@ -137,4 +184,4 @@ tfidf <input> <output dict> [tf]`
 
 ## Matlab 工具集
 
-`matlab` 文件夹下存有所用到的Matlab程序/函数文件。其中还包含了一个G-means工具的Matlab调用。
+`matlab` 文件夹下存有所用到的Matlab程序/函数文件。
