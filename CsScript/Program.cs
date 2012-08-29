@@ -59,25 +59,12 @@ namespace CsScript
 
                             continue;
                         case "#function":
-                            int function_braces = 0;
-                            do
-                            {
-                                ++i;
-                                int j;
-                                for (j = 0; j < source_lines[i].Length; ++j)
-                                {
-                                    if (source_lines[i][j] == '{') ++function_braces;
-                                    else if (source_lines[i][j] == '}')
-                                    {
-                                        --function_braces;
-                                        if (function_braces == 0) { ++j; break; }
-                                    }
-                                }
-                                functions += source_lines[i].Substring(0, j);
-                                offset = j + 1;
-                            } while (function_braces > 0);
-                            s = source_lines[i];
-                            break;
+                            for (++i; i < source_lines.Length; ++i)
+                                if (source_lines[i].Trim().StartsWith("#endfunction"))
+                                    break;
+                                else
+                                    functions += source_lines[i] + Environment.NewLine;
+                            continue;
                         default:
                             break;
                     }

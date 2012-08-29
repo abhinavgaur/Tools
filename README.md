@@ -94,15 +94,18 @@ zthpublic@gmail.com
 
 默认添加了对 `System.dll` 的引用，并使用了 `System.IO`, `System.Text`, `System.Text.RegularExpressions` 这三个命名空间。要添加新的引用，请在脚本中（任意位置）添加：
 
-> `\#reference <DLL 文件路径>`
+> `#reference <DLL 文件路径>`
 
 要添加新的 `using`，请在脚本中编写：
-> `\#using <namespace>;`
+> `#using <namespace>;`
 
 要在脚本中编写函数，请在正常的函数声明前添加一行：
-> `\#function`
+> `#function`
 
-然后紧跟着函数声明。*请注意，函数应当声明为 `static`。*
+并在声明结束之后添加
+> `#endfunction`
+
+*请注意，函数应当声明为 `static`。*
 
 ## 股票数据选择工具
 ### 说明
