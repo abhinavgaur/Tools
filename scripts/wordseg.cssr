@@ -1,0 +1,13 @@
+string[] list = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Data\News");
+string path = @"D:\Studio\WordSegment\Release\Demo.exe";
+foreach(string s in list) {
+	if (s.EndsWith(".txt")) {
+		string target = s.Substring(0, s.Length - 4) + ".seg.txt";
+		System.Diagnostics.Process p = new System.Diagnostics.Process(); 
+		p.StartInfo.FileName = path;
+		p.StartInfo.Arguments = s + " " + target;
+		p.Start();
+		p.WaitForExit();
+	}
+}
+Console.ReadLine();
