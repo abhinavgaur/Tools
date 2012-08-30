@@ -23,7 +23,7 @@ namespace ImportToMySql
 				return;
 			}
 
-			string filename = args[1];
+			string filename = args [1];
 			string cs = @"server=localhost;userid=root;password=;database=" + args [0];
 
 			string table_name = filename.Substring (filename.IndexOf (System.IO.Path.DirectorySeparatorChar));
