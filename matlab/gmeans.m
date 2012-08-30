@@ -1,7 +1,17 @@
-function [L C] = gmeans(data, maxk, alpha)
+function [L C] = gmeans(data, maxk, alpha, check_func)
 %1
 if (nargin < 2), maxk = size(data, 1) / 8; end;
 if (nargin < 3), alpha = 0; end;
+if (nargin < 4), check_func = @AnDartest; end;
+
+if (ischar(check_func)),
+    if (strcmp(check_func, 'gamma')),
+        check_func = @GamKStest;
+    else
+        check_func = @AnDartest;
+    end;
+end;
+
 n = size(data, 1);
 nC = 1;
 C(1,:) = mean(data);
@@ -12,7 +22,7 @@ while nC <= maxk,
     for i = 1:nC,
         %4
         subdata = data(L==i,:);
-        [t new_C] = look_gaussian(subdata, alpha, C(i,:));
+        [t new_C] = look_gaussian(subdata, alpha, C(i,:), check_func);
         if (t ~= 1)
             %5
             C(i, :) = new_C(1, :);
@@ -25,7 +35,7 @@ while nC <= maxk,
     nC = size(C, 1);
 end;
 
-function [t CC]=look_gaussian(data, alpha, c)
+function [t CC]=look_gaussian(data, alpha, c, check_func)
 if (alpha == 0), alpha = 0.05; end;
 
 if (size(data,1) == 1)
@@ -45,11 +55,11 @@ v = CC(1, :) - CC(2, :);
 %4
 nd = size(data, 1);
 X = data*v' / norm(v);
-X = (X - mean(X)) / std(X);
 %5
-t = AnDartest(X, alpha);
+t = check_func(X, alpha);
 
 function [test] = AnDartest(x,alpha)
+x = (x - mean(x)) / std(x);
 n = length(x);
 if n < 3,
     test = 1;
@@ -84,5 +94,10 @@ end
 
 return,
 
-
-
+function [test] = GamKStest(x,alpha)
+x=abs(x);
+param = gamfit(x);
+p2=gamcdf(x,param(1),param(2));
+[H2,]=kstest(x,[x,p2],alpha);
+test = ~H2;
+return,
