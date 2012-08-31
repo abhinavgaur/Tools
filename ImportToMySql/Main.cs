@@ -2,11 +2,18 @@ using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace ImportToMySql
+namespace MySqlConnector
 {
-	class MainClass
+	public class MySqlDB
 	{
 		static MySqlConnection conn = null;
+
+        public static void Connect(string database = "", string userid = "root", string password = "")
+        {
+            string cs = @"server=localhost;userid=" + userid + ";password=" + password + ";Charset=utf8;database=" + database;
+            conn = new MySqlConnection(cs);
+            conn.Open();
+        }
 
 		public static void ExecuteSql(string sql) {
 		 	MySqlCommand cmd = new MySqlCommand();
@@ -15,6 +22,30 @@ namespace ImportToMySql
 			cmd.Prepare();
 			cmd.ExecuteNonQuery();
 		}
+
+        public static List<string[]> ExecuteQuery(string sql)
+        {
+            List<string[]> rows = new List<string[]>();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql;
+            cmd.Prepare();
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                string[] row = new string[dataReader.FieldCount];
+                for (int i = 0; i < dataReader.FieldCount; ++i)
+                    row[i] = dataReader.GetString(i);
+                rows.Add(row);
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            return rows;
+        }
 
 		public static void Main (string[] args)
 		{

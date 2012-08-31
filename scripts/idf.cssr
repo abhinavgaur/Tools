@@ -6,6 +6,7 @@ foreach(string s in list) {
 	if (File.Exists(target)) continue;
 	System.Diagnostics.Process p = new System.Diagnostics.Process(); 
 	p.StartInfo.FileName = path;
+	p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
 	p.StartInfo.Arguments = s + " " + target;
 	p.Start();
 	if (++i % 2 == 0) p.WaitForExit();

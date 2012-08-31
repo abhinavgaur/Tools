@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsScript", "..\CsScript\CsS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordSegment", "..\WordSegment\DemoPG\WordSegment.csproj", "{6B5AB614-25F9-4628-9F4C-594C3B2F4049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportToMySql", "..\ImportToMySql\ImportToMySql.csproj", "{CEEB3767-0F34-4844-B61A-35D936483211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlConnector", "..\ImportToMySql\MySqlConnector.csproj", "{CEEB3767-0F34-4844-B61A-35D936483211}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,28 @@
+﻿#using System.Diagnostics;
+
+string tfidf = @"D:\Documents\学校\作业\毕业设计\Tools\bin\csscript.exe";
+string dict = @"D:\Documents\学校\作业\毕业设计\Data\dict.txt";
+
+int i = 0;
+foreach(string setname in new string[]{"S12", "S50", "R50", "S100", "S500"}) {
+	string[] list = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Data\" + setname + @"\news\", "*.txt");
+	StreamWriter sw = new StreamWriter(@"D:\Documents\学校\作业\毕业设计\Data\" + setname + @"\news.txt");
+	foreach(string s in list) {
+		StreamReader sr = new StreamReader(s);
+		string doc = "";
+		while ((doc = sr.ReadLine()) != null) {
+			sw.Write(doc);
+		}
+		sw.WriteLine();
+		sr.Close();
+	}
+	sw.Flush();
+	sw.Close(); 
+	
+	System.Diagnostics.Process p = new System.Diagnostics.Process(); 
+	p.StartInfo.FileName = tfidf;
+	p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+	p.StartInfo.Arguments = "tfidf.cssr " + dict + @" D:\Documents\学校\作业\毕业设计\Data\" + setname + @"\news.txt " + @"D:\Documents\学校\作业\毕业设计\Data\" + setname + @"\news.tf.txt " + " tf";
+	p.Start();
+	if (++i % 2 == 0) p.WaitForExit();
+}
