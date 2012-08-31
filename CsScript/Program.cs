@@ -10,6 +10,11 @@ namespace CsScript
 {
     public class CompileUnit
     {
+        public const string template = "// !CsScript Generated, do not remove\r\n";
+        public const string default_using = "using System;\r\nusing System.IO;\r\nusing System.Text;\r\nusing System.Text.RegularExpressions;\r\nusing System.Collections.Generic;\r\n";
+        public const string default_main = "namespace ScriptRunner {\r\npublic static partial class Program {\r\npublic static void Main(string[] args) {\r\n #### \r\n}\r\n}\r\n}\r\n";
+        public const string default_functions = "namespace ScriptRunner {\r\npublic static partial class Program {\r\n #### \r\n}\r\n}\r\n";
+
         public static CompilerParameters BuildCompileParameters(bool generateInMemory, bool generateExecutable, string outputAssembly)
         {
             CompilerParameters compilerParameters = new CompilerParameters();
@@ -35,7 +40,7 @@ namespace CsScript
 
         public static void ParseSource(ref string source, out string using_text, out string[] references, out string functions)
         {
-            string new_source = "";
+            string new_source = "#line 2" + Environment.NewLine;
             List<string> references_list = new List<string>();
             using_text = ""; references = new string[0]; functions = "";
             string[] source_lines = source.Split('\n');
@@ -43,7 +48,6 @@ namespace CsScript
             {
                 int offset = 0;
                 string s = source_lines[i].Trim();
-                if (string.IsNullOrEmpty(s)) continue;
                 if (s.StartsWith("#"))
                 {
                     if (s.EndsWith(";")) s = s.Substring(0, s.Length - 1);
@@ -53,17 +57,21 @@ namespace CsScript
                             references_list.Add(s.Substring("#reference ".Length));
                             continue;
                         case "#using":
-                            using_text += "using " + s.Substring("#using ".Length) + ";" + Environment.NewLine;
+                            string using_line = "using " + s.Substring("#using ".Length) + ";";
+                            if (default_using.Contains(using_line)) continue;
+                            using_text += using_line + Environment.NewLine;
                             continue;
                         case "#include":
 
                             continue;
                         case "#function":
+                            functions += "#line " + (i + 2) + Environment.NewLine;
                             for (++i; i < source_lines.Length; ++i)
                                 if (source_lines[i].Trim().StartsWith("#endfunction"))
                                     break;
                                 else
                                     functions += source_lines[i] + Environment.NewLine;
+                            functions += "#line " + (i + 3) + Environment.NewLine;
                             continue;
                         default:
                             break;
@@ -81,11 +89,7 @@ namespace CsScript
 
     static class Program
     {
-        const string template = "// !CsScript Generated, do not remove\r\n";
-        const string default_using = "using System;\r\nusing System.IO;\r\nusing System.Text;\r\nusing System.Text.RegularExpressions;\r\n\r\n";
-        const string default_main = "namespace ScriptRunner {\r\npublic static partial class Program {\r\npublic static void Main(string[] args) {\r\n #### \r\n}\r\n}\r\n}\r\n";
-        const string default_functions = "namespace ScriptRunner {\r\npublic static partial class Program {\r\n #### \r\n}\r\n}\r\n";
-
+       
         static void Main(string[] argv)
         {
 
@@ -112,25 +116,29 @@ namespace CsScript
 
             if (create)
             {
-                System.IO.File.WriteAllText(filename, template);
+                System.IO.File.WriteAllText(filename, CompileUnit.template);
                 return;
             }
 
             if (!System.IO.File.Exists(filename))
             {
-                Console.WriteLine("Error 2: File not found.");
-                return;
+                filename += ".cssc";
+                if (!System.IO.File.Exists(filename))
+                {
+                    Console.WriteLine("Error 2: File not found.");
+                    return;
+                }
             }
 
             string source = System.IO.File.ReadAllText(filename);
 
             string using_text = "", functions = ""; string[] references = null;
            
-            if (!fullsource && !source.StartsWith(template))
+            if (!fullsource && !source.StartsWith(CompileUnit.template))
             {
-                CompileUnit.ParseSource(ref source, out using_text, out references, out functions); 
-                source = default_using + using_text + Environment.NewLine + default_main.Replace("####", source);
-                source += default_functions.Replace("####", functions);
+                CompileUnit.ParseSource(ref source, out using_text, out references, out functions);
+                source = CompileUnit.default_using + using_text + Environment.NewLine + CompileUnit.default_main.Replace("####", source);
+                source += CompileUnit.default_functions.Replace("####", functions);
             }
 
             CompilerParameters compilerParameters = CompileUnit.BuildCompileParameters(true, false, null);
@@ -158,24 +166,18 @@ namespace CsScript
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    Console.WriteLine(ex.InnerException);
                     return;
                 }
             }
             else
             {
                 //如果出错则返回错误文本
-                Console.WriteLine(source);
-
-                string errorMessage = "";
                 foreach (CompilerError compilerError in compilerResults.Errors)
                 {
-                    errorMessage += compilerError/*.ErrorText*/ + System.Environment.NewLine;
-                }
-                Console.WriteLine(errorMessage);
-#if DEBUG
-            Console.ReadLine();
-#endif               
+                    compilerError.FileName = filename;
+                    Console.WriteLine(compilerError);
+                }    
                 return;
             }
 

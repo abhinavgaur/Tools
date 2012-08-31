@@ -20,3 +20,5 @@ D:\Documents\学校\作业\毕业设计\Tools\WordSegment\obj\Debug\WordSegment.
 D:\Documents\学校\作业\毕业设计\Tools\WordSegment\obj\Debug\WordSegment.pdb
 D:\Documents\学校\作业\毕业设计\Tools\Release\WordSegment.exe
 D:\Documents\学校\作业\毕业设计\Tools\Release\WordSegment.pdb
+D:\Documents\学校\作业\毕业设计\Tools\bin\WordSegment.exe
+D:\Documents\学校\作业\毕业设计\Tools\bin\WordSegment.pdb
