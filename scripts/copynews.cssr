@@ -1,4 +1,4 @@
-#reference D:\Documents\学校\作业\毕业设计\Tools\bin\ImportToMySql.exe
+#reference D:\Documents\学校\作业\毕业设计\Tools\bin\MySqlConnector.exe
 #using MySqlConnector;
 #using System.Collections.Generic;
 

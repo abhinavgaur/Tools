@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CEEB3767-0F34-4844-B61A-35D936483211}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ImportToMySql</RootNamespace>
-    <AssemblyName>ImportToMySql</AssemblyName>
+    <RootNamespace>MySqlConnector</RootNamespace>
+    <AssemblyName>MySqlConnector</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
