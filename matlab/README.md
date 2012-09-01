@@ -18,6 +18,22 @@ gmeans.m
 - `L` 列向量，表示每个文档的所在类。
 - `C` 一个矩阵，表示每行表示一个类的 K-means 中心。
 
+### K-means++
+kmeanspp.m
+
+声明：
+`function [L C] = kmeanspp(data, k)`
+
+输入：
+
+- `data` 数据，一行为一个文档。
+- `k` K-means 的类数量。
+
+输出：
+
+- `L` 列向量，表示每个文档的所在类。
+- `C` 一个矩阵，表示每行表示一个类的 K-means 中心。
+
 ### 3D K-means
 kmeans3d.m
 
@@ -33,6 +49,11 @@ kmeans3d.m
 
 - `L` 列向量，表示每个文档的所在类。
 - `C` 一个矩阵，表示每行表示一个类的 K-means 中心。
+
+### 聚类结果比较
+clustercomp.m
+
+对于同样多样本的两个label结果进行比较。
 
 ### N-Cut
 nCut.m   

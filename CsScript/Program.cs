@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
 
-namespace CsScript
+namespace CsSC
 {
     public class CompileUnit
     {
@@ -23,6 +23,7 @@ namespace CsScript
             compilerParameters.IncludeDebugInformation = true;
             compilerParameters.ReferencedAssemblies.Add("System.dll");
             compilerParameters.ReferencedAssemblies.Add("System.Data.dll");
+            compilerParameters.ReferencedAssemblies.Add(Application.ExecutablePath);
             if (outputAssembly != null)
             {
                 compilerParameters.OutputAssembly = outputAssembly;
@@ -47,9 +48,10 @@ namespace CsScript
             for (int i = 0; i < source_lines.Length; ++i)
             {
                 int offset = 0;
-                string s = source_lines[i].Trim();
-                if (s.StartsWith("#"))
+                string s = source_lines[i];
+                if (s.Trim().StartsWith("#"))
                 {
+                    s = s.Trim();
                     if (s.EndsWith(";")) s = s.Substring(0, s.Length - 1);
                     switch (s.Split(' ')[0])
                     {
@@ -71,7 +73,7 @@ namespace CsScript
                                     break;
                                 else
                                     functions += source_lines[i] + Environment.NewLine;
-                            functions += "#line " + (i + 3) + Environment.NewLine;
+                            new_source += "#line " + (i + 1) + Environment.NewLine;
                             continue;
                         default:
                             break;
@@ -83,7 +85,8 @@ namespace CsScript
             }
 
             references = references_list.ToArray();
-            source = new_source;
+            source = new_source + Environment.NewLine + "#line 10000";
+            functions += Environment.NewLine + "#line 20000";
         }        
     }
 
@@ -95,9 +98,19 @@ namespace CsScript
 
             #region PARSE COMMAND LINE ARGS
             string filename = null;
-            bool create = false, fullsource = false;
+            bool create = false, fullsource = false, showsource = false, addpath = false;
 
-            foreach (string s in argv)
+            if (argv.Length < 1)
+            {
+                Console.WriteLine("Usage: cssc [-c|-s] <filename> [args...]");
+                Console.WriteLine("       cssc -a <default script path>[;<script paths>...]");
+                return;
+            }
+
+            int args_offset = 0;
+            for (; args_offset < argv.Length; ++args_offset)
+            {
+                string s = argv[args_offset];
                 if (s.StartsWith("-"))
                     switch (s)
                     {
@@ -109,9 +122,18 @@ namespace CsScript
                         case "-f":
                             fullsource = true;
                             break;
+                        case "-source":
+                        case "-s":
+                            showsource = true;
+                            break;
+                        case "-addpath":
+                        case "-a":
+                            addpath = true;
+                            break;
                     }
                 else
-                    if (filename == null) filename = s;
+                    if (filename == null) { filename = s; break; }
+            }
             #endregion
 
             if (create)
@@ -120,9 +142,32 @@ namespace CsScript
                 return;
             }
 
+            if (addpath)
+            {
+                if (!filename.EndsWith(";")) filename += ";";
+                Properties.Settings.Default.ScriptPaths += filename;
+                Properties.Settings.Default.Save();
+                return;
+            }
+
+            if (Utility.GetFileExtension(filename) == "") filename += ".cssc";
+
+            if (!Utility.IsAbsolutePath(filename)) {
+                foreach (string p in Properties.Settings.Default.ScriptPaths.Split(';'))
+                {
+                    string path = p;
+                    if (!path.EndsWith("" + System.IO.Path.DirectorySeparatorChar))
+                        path += System.IO.Path.DirectorySeparatorChar;
+                    if (System.IO.File.Exists(path + filename))
+                    {
+                        filename = path + filename;
+                        break;
+                    }
+                }
+            }
+
             if (!System.IO.File.Exists(filename))
             {
-                filename += ".cssc";
                 if (!System.IO.File.Exists(filename))
                 {
                     Console.WriteLine("Error 2: File not found.");
@@ -130,7 +175,7 @@ namespace CsScript
                 }
             }
 
-            string source = System.IO.File.ReadAllText(filename);
+            string source = System.IO.File.ReadAllText(filename, EncodingType.GetType(filename));
 
             string using_text = "", functions = ""; string[] references = null;
            
@@ -141,14 +186,17 @@ namespace CsScript
                 source += CompileUnit.default_functions.Replace("####", functions);
             }
 
+            if (showsource) { Console.WriteLine(source); return; }
+
             CompilerParameters compilerParameters = CompileUnit.BuildCompileParameters(true, false, null);
             foreach(string refs in references)
                 compilerParameters.ReferencedAssemblies.Add(refs);    
 
             CompilerResults compilerResults = CompileUnit.Compile(source, compilerParameters);
-            string[] child_argv = new string[Math.Max(0, argv.Length - 1)];
-            for (int i = 1; i < argv.Length; ++i)
-                child_argv[i - 1] = argv[i];
+            ++args_offset;
+            string[] child_argv = new string[Math.Max(0, argv.Length - args_offset)];
+            for (int i = args_offset; i < argv.Length; ++i)
+                child_argv[i - args_offset] = argv[i];
 
             if (compilerResults.Errors.Count == 0)
             {
@@ -176,6 +224,14 @@ namespace CsScript
                 foreach (CompilerError compilerError in compilerResults.Errors)
                 {
                     compilerError.FileName = filename;
+                    if (compilerError.Line > 10000)
+                    {
+                        Console.WriteLine("Main 函数区错误，可能是错误的 {} 匹配。");
+                    }
+                    else if (compilerError.Line > 20000)
+                    {
+                        Console.WriteLine("函数定义区错误，可能是错误的 {} 匹配。请检查 #function ... #endfunction 区间");
+                    }
                     Console.WriteLine(compilerError);
                 }    
                 return;

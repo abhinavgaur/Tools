@@ -35,7 +35,8 @@ switch (option)
 				if (cval > colNum) colNum = cval;
 			}
 		}
-
+		
+		++colNum;
 		double[,] mat = new double[lines.Length, colNum];
 
 		for(int row = 0; row < lines.Length; ++row)
@@ -96,8 +97,8 @@ switch (option)
 			{
 				ls.Clear();
 				string[] cols = lines[i].Split(',', ' ', '\t');
-				if (cols.Length != colCount) continue;
-				for (int j = 0; j < colCount; ++j)
+				//if (cols.Length != colCount) continue;
+				for (int j = 0; j < cols.Length; ++j)
 				{
 					if (cols[j] == "") continue;
 					try
@@ -116,7 +117,7 @@ switch (option)
 				if (option == "lsa2lda2") sw.Write(ls.Count + " ");
 				foreach (ColValue cv in ls)
 					sw.Write(cv.col + ":" + cv.val + " ");
-
+				//Console.WriteLine(i);
 				sw.WriteLine();
 			}
 			sw.Flush();

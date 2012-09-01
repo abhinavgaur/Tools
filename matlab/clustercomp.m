@@ -7,4 +7,5 @@ for i=1:l1,
         A(i,j) = sum(c1==i & c2==j);
     end;
 end;
-result = 1 - ((length(c1) - sum(sum(A > 0))) + (length(c2) - sum(sum(A' > 0))))/length(c1);
+result = sum(sum(A)-max(A)) + sum(sum(A')-max(A'));
+result = 1 - result / length(c1);
