@@ -24,3 +24,13 @@ D:\Documents\学校\作业\毕业设计\Tools\bin\StockDataChooser.pdb
 D:\Documents\学校\作业\毕业设计\Tools\StockDataChooser\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 D:\Documents\学校\作业\毕业设计\Tools\StockDataChooser\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 D:\Documents\学校\作业\毕业设计\Tools\StockDataChooser\obj\x86\Debug\StockDataChooser.EncodingType.resources
+D:\Projects\Tools\bin\StockDataChooser.exe.config
+D:\Projects\Tools\bin\StockDataChooser.exe
+D:\Projects\Tools\bin\StockDataChooser.pdb
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\StockDataChooser.EncodingType.resources
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\StockDataChooser.Properties.Resources.resources
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\ResGen.read.1.tlog
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\ResGen.write.1.tlog
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\StockDataChooser.exe
+D:\Projects\Tools\StockDataChooser\obj\x86\Debug\StockDataChooser.pdb

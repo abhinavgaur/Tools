@@ -22,3 +22,14 @@ D:\Documents\学校\作业\毕业设计\Tools\Release\WordSegment.exe
 D:\Documents\学校\作业\毕业设计\Tools\Release\WordSegment.pdb
 D:\Documents\学校\作业\毕业设计\Tools\bin\WordSegment.exe
 D:\Documents\学校\作业\毕业设计\Tools\bin\WordSegment.pdb
+D:\Projects\Tools\bin\WordSegment.exe
+D:\Projects\Tools\bin\WordSegment.pdb
+D:\Projects\Tools\WordSegment\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Tools\WordSegment\obj\Debug\Demo.FormDemo.resources
+D:\Projects\Tools\WordSegment\obj\Debug\WordSegment.Properties.Resources.resources
+D:\Projects\Tools\WordSegment\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Projects\Tools\WordSegment\obj\Debug\ResGen.read.1.tlog
+D:\Projects\Tools\WordSegment\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Projects\Tools\WordSegment\obj\Debug\ResGen.write.1.tlog
+D:\Projects\Tools\WordSegment\obj\Debug\WordSegment.exe
+D:\Projects\Tools\WordSegment\obj\Debug\WordSegment.pdb

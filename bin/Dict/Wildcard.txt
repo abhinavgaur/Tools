@@ -19,3 +19,4 @@ Nokia-N97
 Nokia-E72
 Nokia-N900
 
+正式

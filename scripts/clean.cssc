@@ -1,7 +1,8 @@
-string[] list = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Data\News");
+string[] list = Directory.GetFiles(@"D:\Projects\News\seg\");
 foreach(string s in list) {
 	if (s.EndsWith(".seg.txt") && !s.EndsWith(".clean.txt")) {
 		string target = s.Substring(0, s.Length - 4) + ".clean.txt";
+		if (File.Exists(target)) continue;
 		StreamReader sr = new StreamReader(s);
 		StreamWriter sw = new StreamWriter(target);
 		string line = "", date = "", title = "", content = "";

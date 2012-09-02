@@ -7,3 +7,12 @@ D:\Documents\学校\作业\毕业设计\Tools\bin\CsSC.pdb
 D:\Documents\学校\作业\毕业设计\Tools\CsScript\obj\x86\Debug\CsSC.exe
 D:\Documents\学校\作业\毕业设计\Tools\CsScript\obj\x86\Debug\CsSC.pdb
 D:\Documents\学校\作业\毕业设计\Tools\CsScript\obj\x86\Debug\CsSC.Properties.Resources.resources
+D:\Projects\Tools\bin\CsSC.exe.config
+D:\Projects\Tools\bin\CsSC.exe
+D:\Projects\Tools\bin\CsSC.pdb
+D:\Projects\Tools\CsScript\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\Tools\CsScript\obj\x86\Debug\CsSC.Properties.Resources.resources
+D:\Projects\Tools\CsScript\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Projects\Tools\CsScript\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Projects\Tools\CsScript\obj\x86\Debug\CsSC.exe
+D:\Projects\Tools\CsScript\obj\x86\Debug\CsSC.pdb
