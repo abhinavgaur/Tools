@@ -3,7 +3,6 @@ D:\Documents\学校\作业\毕业设计\Tools\bin\MySqlConnector.exe
 D:\Documents\学校\作业\毕业设计\Tools\bin\MySqlConnector.pdb
 D:\Documents\学校\作业\毕业设计\Tools\ImportToMySql\obj\x86\Debug\MySqlConnector.exe
 D:\Documents\学校\作业\毕业设计\Tools\ImportToMySql\obj\x86\Debug\MySqlConnector.pdb
-D:\Documents\学校\作业\毕业设计\Tools\MySqlConnector\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Documents\学校\作业\毕业设计\Tools\MySqlConnector\obj\x86\Debug\MySqlConnector.exe
 D:\Documents\学校\作业\毕业设计\Tools\MySqlConnector\obj\x86\Debug\MySqlConnector.pdb
 D:\Projects\Tools\bin\MySqlConnector.exe
@@ -11,3 +10,4 @@ D:\Projects\Tools\bin\MySqlConnector.pdb
 D:\Projects\Tools\MySqlConnector\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Projects\Tools\MySqlConnector\obj\x86\Debug\MySqlConnector.exe
 D:\Projects\Tools\MySqlConnector\obj\x86\Debug\MySqlConnector.pdb
+D:\Documents\学校\作业\毕业设计\Tools\MySqlConnector\obj\x86\Debug\MySqlConnector.csprojResolveAssemblyReference.cache
