@@ -1,3 +1,9 @@
+% data is a n*m array where n is the total points to cluster and m is dimension of each point
+% maxk is maximum number of clusters to check for, default : n/8
+% alpha is the significance value for the statistical significance test. Suggested value ?
+% check_func is the statistical test used for measuring the significance of intermediate clusters closeness to Gaussian.
+% By default it the Anderson-Darling test (Anderson and Darling, 1952) is used to test if a sample of data comes from 
+% a specific distribution. 
 function [L C] = gmeans(data, maxk, alpha, check_func)
 %1
 if (nargin < 2), maxk = size(data, 1) / 8; end;
